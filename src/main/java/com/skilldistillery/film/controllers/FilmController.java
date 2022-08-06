@@ -58,6 +58,17 @@ public class FilmController {
 		
 		return mv;
 	}
-
+	//for pulling 
+	@RequestMapping(path= "createdFilm.do", params="filmId", method=RequestMethod.POST)
+	public ModelAndView createFilm2(Film film) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		List<Film> films = new ArrayList<>();
+		films.add(filmDAO.createFilm(film));
+		mv.addObject("film", new Film());
+		
+		mv.setViewName("WEB-INF/filmResults.jsp");
+		
+		return mv;
+	}
 	
 }
