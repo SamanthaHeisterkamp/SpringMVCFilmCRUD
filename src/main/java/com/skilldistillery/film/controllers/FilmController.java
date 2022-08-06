@@ -47,7 +47,7 @@ public class FilmController {
 	}
 	
 	
-	@RequestMapping(path= "createdFilm.do", params="filmId", method=RequestMethod.POST)
+	@RequestMapping(path= "createdFilm.do", method=RequestMethod.POST)
 	public ModelAndView createFilm(Film film) throws SQLException {
 		ModelAndView mv = new ModelAndView();
 		List<Film> films = new ArrayList<>();
