@@ -41,7 +41,7 @@
 				 <br>
 				 <label for="specialFeatures">Special Features:</label>
 				  <input type="text" name="specialFeatures"required>
-				  
+				  <br>
 				
 				
 				
