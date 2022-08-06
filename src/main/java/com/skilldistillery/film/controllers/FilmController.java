@@ -47,28 +47,24 @@ public class FilmController {
 	}
 	
 	
-	@RequestMapping(path= "createdFilm.do", params="filmId", method=RequestMethod.POST)
+	@RequestMapping(path= "createdFilm.do", method=RequestMethod.POST)
 	public ModelAndView createFilm(Film film) throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		List<Film> films = new ArrayList<>();
-		films.add(filmDAO.createFilm(film));
-		mv.addObject("film", new Film());
-		
-		mv.setViewName("WEB-INF/filmResults.jsp");
-		
+		Film newFilm = filmDAO.createFilm(film);
+		System.out.println("**********************INSIDE OF CREATEFILM()****************");
+		System.out.println(newFilm);
+		mv.addObject("film", newFilm);
+		mv.setViewName("redirect:thisFilmIsReallyCreated.do");
 		return mv;
 	}
-	//for pulling 
-	@RequestMapping(path= "createdFilm.do", params="filmId", method=RequestMethod.POST)
-	public ModelAndView createFilm2(Film film) throws SQLException {
+	
+	@RequestMapping(path= "thisFilmIsReallyCreated.do", method=RequestMethod.GET)
+	public ModelAndView filmHasBeenCreated() throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		List<Film> films = new ArrayList<>();
-		films.add(filmDAO.createFilm(film));
-		mv.addObject("film", new Film());
-		
 		mv.setViewName("WEB-INF/filmResults.jsp");
-		
 		return mv;
 	}
+	
+	
 	
 }
