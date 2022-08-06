@@ -19,12 +19,14 @@ public class FilmController {
 	@Autowired
 	private FilmDAO filmDAO;
 
-	
+	//home.do path is redirected from web.xml welcome file using home.jsp
 	@RequestMapping(path= {"/", "home.do"})
 	public String index() {
 		return "WEB-INF/home.jsp";
 	}
 	
+	//filmDetails.do is a path we execute from our home.jsp, 
+	//we then pass a 'filmId' parameter input by user using the form "searchByFilmId" inside home.jsp
 	@RequestMapping(path= "filmDetails.do", params="filmId", method=RequestMethod.GET)
 	public ModelAndView retrieveFilmDetails(int filmId) throws SQLException {
 		ModelAndView mv = new ModelAndView();
