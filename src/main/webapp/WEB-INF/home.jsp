@@ -9,7 +9,7 @@
 <body>
 
 
-<h1 style="color:teal;">Film Query APP</h1>
+	<h1 style="color: teal;">Film Query APP</h1>
 	<div>
 		<form action="filmDetails.do" method="get">
 			<label for="searchByFilmId"> </label> <input type="text"
@@ -18,6 +18,25 @@
 
 		</form>
 	</div>
+
+	<div>
+		<form action="addFilm.do" method="post">
+			<input name="filmId" placeholder="Search by ID"> 
+			
+			<input type="submit" value="Create Film">
+		</form>
+
+	</div>
+
+	<div>
+		<form action="">
+			<button type="button">Remove Film</button>
+
+
+		</form>
+
+	</div>
+
 
 </body>
 </html>
