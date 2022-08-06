@@ -320,6 +320,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 				if (keys.next()) {
 					int newFilmId = keys.getInt(1);
 					film.setFilmId(newFilmId);
+					System.out.println(film);
 					conn.commit();
 				}
 				keys.close();

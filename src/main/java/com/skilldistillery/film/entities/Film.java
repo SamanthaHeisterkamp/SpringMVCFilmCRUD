@@ -177,14 +177,49 @@ public class Film {
 
 	@Override
 	public String toString() {
-		String s = "\n\nFilm Id: " + filmId + "\nFilm Title: " + title + "\nDescription: " + description
-				+ "\nReleaseYear: " + releaseYear + "\nRating: " + rating + "\nLanguage: " + language + " \nActors:\n";
-		for (Actor actor : actorList) {
-			s += actor;
-
-		}
-		return s;
+		StringBuilder builder = new StringBuilder();
+		builder.append("Film [filmId=");
+		builder.append(filmId);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", releaseYear=");
+		builder.append(releaseYear);
+		builder.append(", languageId=");
+		builder.append(languageId);
+		builder.append(", rentDuration=");
+		builder.append(rentDuration);
+		builder.append(", rentalRate=");
+		builder.append(rentalRate);
+		builder.append(", length=");
+		builder.append(length);
+		builder.append(", replacementCost=");
+		builder.append(replacementCost);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append(", specialFeatures=");
+		builder.append(specialFeatures);
+		builder.append(", actorList=");
+		builder.append(actorList);
+		builder.append(", language=");
+		builder.append(language);
+		builder.append("]");
+		return builder.toString();
 	}
+
+//	@Override
+//	public String toString() {
+//		String s = "\n\nFilm Id: " + filmId + "\nFilm Title: " + title + "\nDescription: " + description
+//				+ "\nReleaseYear: " + releaseYear + "\nRating: " + rating + "\nLanguage: " + language + " \nActors:\n";
+//		for (Actor actor : actorList) {
+//			s += actor;
+//
+//		}
+//		return s;
+//	}
+	
+	
 
 
 }
