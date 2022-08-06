@@ -74,6 +74,13 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+<div>
+		<form action="deleteFilm.do" method="POST">
+			<label for="deleteFilm"> </label> <input type="text"
+				name="filmId" placeholder="Delete by ID"> <input
+				type="submit" value="Submit">
 
+		</form>
+	</div>
 </body>
 </html>

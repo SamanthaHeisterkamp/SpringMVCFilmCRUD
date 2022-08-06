@@ -14,7 +14,8 @@
 		<form action="createdFilm.do" method="post">
 			<label for="title">Title:</label> 
 			<input type="text" name="title"required="true"> 
-				<br> <label for="description">Description:</label>
+				<br>
+				 <label for="description">Description:</label>
 			<textarea name="description"></textarea>
 			<br>
 			 <label for="releaseYear">Release Year:</label> 
@@ -35,33 +36,11 @@
 				<label for="rentDuration">Rent Duration:</label> 
 				<input type="text" name="rentDuration" required> 
 				<br>
-<<<<<<< HEAD
-				<label for="replacementCost">ReplacementCost:</label>
-				  <input type="text" name="replacementCost"required>
-				<br>
-				<label for="rating">Rating:</label>
-				  <input type="text" name="rating"required>  
-				 <br>
-				 <label for="specialFeatures">Special Features:</label>
-				  <input type="text" name="specialFeatures"required>
-				  <br>
-				
-				
-				
-				
-				
-				
-				
-				
-				<form action="createdFilm.do">
-					<input type="submit" value="Create Film">
-				</form>
-=======
 			<label for="rentalRate">Rental Rate:</label> 
 			<input type="text" name="rentalRate" required> 
 			<br> 
 			<label for="length">Length:</label>
-			<input type="text" name="length" required> 
+			<input type="text" name="length" required > 
 			<br> 
 			<label for="replacementCost">ReplacementCost:</label> 
 			<input type="text"
@@ -69,14 +48,20 @@
 				<br> 
 				<label
 				for="rating">Rating:</label> <input type="text" name="rating"
-				required> <br> <label for="specialFeatures">Special
-				Features:</label> <input type="text" name="specialFeatures" required>
-
+				> 
+				<br>
+				<label for="specialFeatures">Special Features:</label> 
+				<select name="specialFeatures">
+				<option >Trailers</option>
+				<option >Commentaries</option>
+				<option >Deleted Scenes</option>
+				<option >Behind the Scenes</option>
+				
+				</select>
 
 
 			<input type="submit" value="Create Film">
 
->>>>>>> dd409bee7fa2018e1a287fc897642a68ec3637b0
 
 		</form>
 	</div>
