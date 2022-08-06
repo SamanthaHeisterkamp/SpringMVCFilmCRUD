@@ -12,6 +12,29 @@
 	<h1 style="color:maroon;">Results</h1>
 	<div>
 		<c:choose>
+		<c:when test="${! empty film}">
+
+					<ul>
+						<h3>Film</h3>
+						<li>ID: ${film.filmId}</li>
+						<li>Title: ${film.title}</li>
+						<li>Description: ${film.description}</li>
+						<li>Release Year: ${film.releaseYear}</li>
+						<li>Language: ${film.language}</li>
+						<li>Rental Duration: ${film.rentDuration}</li>
+						<li>Rental Rate: ${film.rentalRate}</li>
+						<li>Film Length: ${film.length}</li>
+						<li>Replacement Cost: ${film.replacementCost}</li>
+						<li>Rating: ${film.rating}</li>
+						<li>Special Features: ${film.specialFeatures}</li>
+						
+
+					</ul>
+						<form action="home.do">
+							<input type="submit" value="Back">
+						</form>
+
+			</c:when>
 			<c:when test="${! empty films[0]}">
 				<c:forEach var="film" items="${films}">
 
