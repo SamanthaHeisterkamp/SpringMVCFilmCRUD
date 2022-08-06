@@ -29,6 +29,7 @@ public class FilmController {
 	//we then pass a 'filmId' parameter input by user using the form "searchByFilmId" inside home.jsp
 	//we can duplicate this method for the keyword search user story 5 changing 
 	//parameter in take to String 'keyword' along with params="keyword"
+	
 	@RequestMapping(path= "filmDetails.do", params="filmId", method=RequestMethod.GET)
 	public ModelAndView retrieveFilmDetails(int filmId) throws SQLException {
 		ModelAndView mv = new ModelAndView();
