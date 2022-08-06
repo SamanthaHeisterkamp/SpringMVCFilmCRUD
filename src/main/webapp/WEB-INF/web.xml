@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>MVCFilmSite</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<servlet-name>HOMEPAGE</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>HOMEPAGE</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+=======
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>MVCFilmSite</display-name>
   <welcome-file-list>
@@ -19,4 +43,5 @@
    <url-pattern>*.do</url-pattern>
  </servlet-mapping>
   
+>>>>>>> eaa4c6b53d462809f6adaf65b5995b15bfeb8916
 </web-app>
