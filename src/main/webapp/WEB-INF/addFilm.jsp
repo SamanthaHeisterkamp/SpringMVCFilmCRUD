@@ -13,7 +13,7 @@
 		<div>
 			<form action="addFilm.do" method="POST">
 				<label for="title">Title:</label> 
-				  <input type="text" name="title" required="true"> S
+				  <input type="text" name="title" required="true"> 
 				<br>
 				<label for="description">Description:</label>
 				  <textarea name="description"></textarea>
@@ -21,6 +21,26 @@
 				<label for="releaseYear">Release Year:</label>
 				  <input type="text" name="releaseYear"required>
 				<br>
+				 <label for="language">Language:</label>
+				  <input type="text" name="language"required>
+				<br>
+				<label for="rentDuration">Rent Duration:</label>
+				  <input type="text" name="rentDuration"required>
+				  <br>
+				  <label for="rentalRate">Rental Rate:</label>
+				  <input type="text" name="rentalRate"required>
+				  <br>
+				  <label for="length">Length:</label>
+				  <input type="text" name="length"required>
+				<br>
+				<label for="replacementCost">ReplacementCost:</label>
+				  <input type="text" name="replacementCost"required>
+				<br>
+				<label for="rating">Rating:</label>
+				  <input type="text" name="rating"required>  
+				 <br>
+				 <label for="specialFeatures">Special Features:</label>
+				  <input type="text" name="specialFeatures"required>
 				  
 				
 				
