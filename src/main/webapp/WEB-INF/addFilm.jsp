@@ -14,7 +14,8 @@
 		<form action="createdFilm.do" method="post">
 			<label for="title">Title:</label> 
 			<input type="text" name="title"required="true"> 
-				<br> <label for="description">Description:</label>
+				<br>
+				 <label for="description">Description:</label>
 			<textarea name="description"></textarea>
 			<br>
 			 <label for="releaseYear">Release Year:</label> 
@@ -39,7 +40,7 @@
 			<input type="text" name="rentalRate" required> 
 			<br> 
 			<label for="length">Length:</label>
-			<input type="text" name="length" required> 
+			<input type="text" name="length" required > 
 			<br> 
 			<label for="replacementCost">ReplacementCost:</label> 
 			<input type="text"
@@ -47,9 +48,16 @@
 				<br> 
 				<label
 				for="rating">Rating:</label> <input type="text" name="rating"
-				required> <br> <label for="specialFeatures">Special
-				Features:</label> <input type="text" name="specialFeatures" required>
-
+				> 
+				<br>
+				<label for="specialFeatures">Special Features:</label> 
+				<select name="specialFeatures">
+				<option >Trailers</option>
+				<option >Commentaries</option>
+				<option >Deleted Scenes</option>
+				<option >Behind the Scenes</option>
+				
+				</select>
 
 
 			<input type="submit" value="Create Film">
