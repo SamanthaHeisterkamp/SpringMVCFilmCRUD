@@ -28,7 +28,10 @@ public class FilmController {
 	public String createFilmForm() {
 		return "WEB-INF/addFilm.jsp";
 	}
-	
+	@RequestMapping(path= {"/", "deleteFilm.do"})
+	public String delete() {
+		return "WEB-INF/delete.jsp";
+	}
 	//filmDetails.do is a path we execute from our home.jsp, 
 	//we then pass a 'filmId' parameter input by user using the form "searchByFilmId" inside home.jsp
 	//we can duplicate this method for the keyword search user story 5 changing 
@@ -65,6 +68,16 @@ public class FilmController {
 		return mv;
 	}
 	
-	
+	@RequestMapping(path= "deleteFilm.do", params="filmId", method=RequestMethod.GET)
+	public ModelAndView deleteFilm(int filmId) throws SQLException {
+		
+		ModelAndView mv = new ModelAndView();
+		boolean deleted = filmDAO.deleteFilm(filmId);
+		mv.addObject("deleted", deleted);
+		mv.addObject("filmId", filmId);
+		mv.setViewName("WEB-INF/home.jsp");
+		
+		return mv;
+	}
 	
 }
