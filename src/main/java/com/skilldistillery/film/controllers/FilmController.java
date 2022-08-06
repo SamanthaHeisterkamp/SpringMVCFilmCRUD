@@ -24,6 +24,10 @@ public class FilmController {
 	public String index() {
 		return "WEB-INF/home.jsp";
 	}
+	@RequestMapping(path= {"/", "addFilm.do"})
+	public String createFilmForm() {
+		return "WEB-INF/addFilm.jsp";
+	}
 	
 	//filmDetails.do is a path we execute from our home.jsp, 
 	//we then pass a 'filmId' parameter input by user using the form "searchByFilmId" inside home.jsp
@@ -42,6 +46,18 @@ public class FilmController {
 		return mv;
 	}
 	
+	
+	@RequestMapping(path= "createdFilm.do", params="filmId", method=RequestMethod.POST)
+	public ModelAndView createFilm(Film film) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		List<Film> films = new ArrayList<>();
+		films.add(filmDAO.createFilm(film));
+		mv.addObject("film", new Film());
+		
+		mv.setViewName("WEB-INF/filmResults.jsp");
+		
+		return mv;
+	}
 
 	
 }

@@ -21,7 +21,6 @@
 
 	<div>
 		<form action="addFilm.do" method="post">
-			<input name="filmId" placeholder="Search by ID"> 
 			
 			<input type="submit" value="Create Film">
 		</form>
