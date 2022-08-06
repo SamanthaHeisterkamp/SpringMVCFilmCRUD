@@ -31,6 +31,8 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 	@Override
 	public Film findFilmById(int filmId) throws SQLException {
 		Film film = null;
+		
+		try {
 		conn = DriverManager.getConnection(URL, user, pass);
 
 		String sql = "SELECT * FROM film WHERE id = ?";
@@ -62,7 +64,9 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 		stmt.close();
 
 		conn.close();
-
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return film;
 	}
 
@@ -427,5 +431,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 
 		return true;
 	}
+
+	
 
 }
