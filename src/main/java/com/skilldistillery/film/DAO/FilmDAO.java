@@ -27,7 +27,7 @@ public interface FilmDAO {
 	
 	public Film createFilm(Film film);
 	
-	boolean saveFilm(Film film);
+	boolean editFilm(Film film);
 	
 	boolean deleteFilm(int filmId);
 

@@ -341,7 +341,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 	}
 
 	@Override
-	public boolean saveFilm(Film film) {
+	public boolean editFilm(Film film) {
 		Connection conn = null;
 
 		try {
