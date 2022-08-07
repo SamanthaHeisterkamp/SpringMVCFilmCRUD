@@ -21,7 +21,7 @@
 	
 	<div>
 		<form action="filmDetails.do" method="get">
-			<label for="searchByKeyword"> </label> <input type="text"
+			<label for="keyword"> </label> <input type="text"
 				name="keyword" placeholder="Search by Keyword"> <input
 				type="submit" value="Submit">
 

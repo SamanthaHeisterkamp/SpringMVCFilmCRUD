@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.film.DAO.FilmDAO;
 import com.skilldistillery.film.entities.Film;
@@ -49,23 +50,36 @@ public class FilmController {
 		
 		return mv;
 	}
+	@RequestMapping(path= "filmDetails.do", params="keyword", method=RequestMethod.GET)
+	public ModelAndView retrieveFilmDetails(String keyword) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		List<Film> films = filmDAO.findFilmByKeyword(keyword);
+		mv.addObject("films", films);
+		
+		mv.setViewName("WEB-INF/filmResults.jsp");
+		
+		return mv;
+	}
 	
 	
 	@RequestMapping(path= "createdFilm.do", method=RequestMethod.POST)
-	public ModelAndView createFilm(Film film) throws SQLException {
-		ModelAndView mv = new ModelAndView();
+	public ModelAndView createFilm(Film film, RedirectAttributes redir) {
 		Film newFilm = filmDAO.createFilm(film);
+		boolean createdFilm = newFilm.getFilmId() > 0 ? true : false;
+		ModelAndView mv = new ModelAndView();
 		System.out.println("**********************INSIDE OF CREATEFILM()****************");
 		System.out.println(newFilm);
+		boolean yesThisIsCreated = true;
+		redir.addFlashAttribute("createdFilm", yesThisIsCreated);
 		mv.addObject("film", newFilm);
 		mv.setViewName("redirect:thisFilmIsReallyCreated.do");
 		return mv;
 	}
 	
 	@RequestMapping(path= "thisFilmIsReallyCreated.do", method=RequestMethod.GET)
-	public ModelAndView filmHasBeenCreated() throws SQLException {
+	public ModelAndView filmHasBeenCreated() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/home.jsp");
+		mv.setViewName("WEB-INF/createdConfirmation.jsp");
 		return mv;
 	}
 
