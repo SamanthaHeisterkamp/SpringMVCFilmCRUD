@@ -51,6 +51,7 @@
 						<li>Replacement Cost: ${film.replacementCost}</li>
 						<li>Rating: ${film.rating}</li>
 						<li>Special Features: ${film.specialFeatures}</li>
+						<li>Category: ${film.category} </li>
 						<h3>Cast</h3>
 						<c:forEach var="actor" items="${film.actorList}">
 							<li>${actor.toString()}</li>

@@ -31,4 +31,6 @@ public interface FilmDAO {
 	
 	boolean deleteFilm(int filmId);
 
+	public String convertCategoryId(int filmId) throws SQLException;
+
 }

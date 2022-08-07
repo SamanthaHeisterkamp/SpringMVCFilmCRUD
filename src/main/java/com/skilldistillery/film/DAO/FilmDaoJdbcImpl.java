@@ -57,6 +57,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 			film.setSpecialFeatures(filmResult.getString("special_features"));
 			film.setActorList(findActorsByFilmId(filmId));
 			film.setLanguage(convertLanguageId(filmId));
+			film.setCategory(convertCategoryId(filmId));
 
 		}
 
@@ -127,7 +128,9 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 	public String convertLanguageId(int filmId) throws SQLException {
 		conn = DriverManager.getConnection(URL, user, pass);
 
-		String sql = "SELECT language.name FROM language JOIN film on film.language_id = language.id WHERE film.id = ?";
+//		String sql = "SELECT language.name FROM language JOIN film on film.language_id = language.id WHERE film.id = ?";
+		String sql = "SELECT * FROM film f JOIN language l ON f.language_id = l.id WHERE f.id = ?";
+
 		String lang = "";
 
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -135,13 +138,35 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 		ResultSet rs = stmt.executeQuery();
 
 		if (rs.next()) {
-			lang = rs.getString("language.name");
+			lang = rs.getString("l.name");
 		}
 		rs.close();
 		stmt.close();
 		conn.close();
  
 		return lang;
+
+	}
+	
+	@Override
+	public String convertCategoryId(int filmId) throws SQLException {
+		conn = DriverManager.getConnection(URL, user, pass);
+
+		String sql = "SELECT * FROM film f JOIN film_category fc ON f.id = fc.film_id JOIN category c ON fc.category_id = c.id WHERE f.id = ?";
+		String cat = "";
+
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, filmId);
+		ResultSet rs = stmt.executeQuery();
+
+		if (rs.next()) {
+			cat = rs.getString("c.name");
+		}
+		rs.close();
+		stmt.close();
+		conn.close();
+ 
+		return cat;
 
 	}
 
