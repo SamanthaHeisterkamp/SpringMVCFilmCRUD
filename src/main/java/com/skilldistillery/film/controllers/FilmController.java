@@ -63,9 +63,9 @@ public class FilmController {
 	
 	
 	@RequestMapping(path= "createdFilm.do", method=RequestMethod.POST)
-	public ModelAndView createFilm(Film film, RedirectAttributes redir) {
+	public ModelAndView createFilm(Film film, RedirectAttributes redir) throws SQLException{
 		Film newFilm = filmDAO.createFilm(film);
-		boolean createdFilm = newFilm.getFilmId() > 0 ? true : false;
+//		boolean createdFilm = newFilm.getFilmId() > 0 ? true : false;
 		ModelAndView mv = new ModelAndView();
 		System.out.println("**********************INSIDE OF CREATEFILM()****************");
 		System.out.println(newFilm);
