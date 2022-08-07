@@ -352,9 +352,9 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false);
-
+			//special_features was spelled incorrectly
 			String sql = "UPDATE film SET title = ?, description = ?, release_year = ?, language_id = ?,  rental_duration = ?, "
-					+ "rental_rate = ?, length = ?, replacement_cost = ?,  rating = ?, specail_features = ? "
+					+ "rental_rate = ?, length = ?, replacement_cost = ?,  rating = ?, special_features = ? "
 					+ "WHERE id = ?";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -373,10 +373,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 
 			int updateCount = stmt.executeUpdate();
 
-			if (updateCount == 1) {
-				conn.commit();
-			}
-
+			conn.commit();
 			stmt.close();
 			conn.close();
 

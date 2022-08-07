@@ -11,19 +11,20 @@
 <body>
 <h1>Update Film</h1>
 	<div>
-		<form action="editFilm.do" method="post">
+		<form action="filmIsEdited.do" method="post">
+			<input type="hidden" name="filmId" value="${film.filmId}">
 			<label for="title">Title:</label> 
-			<input type="text" name="title"required="true"> 
+			<input type="text" name="title" value="${film.title}" required> 
 				<br>
 				 <label for="description">Description:</label>
-			<textarea name="description"></textarea>
+			<input name="description" maxlength=250 value="${film.description}"></input>
 			<br>
 			 <label for="releaseYear">Release Year:</label> 
-			 <input type="text" name="releaseYear" required> 
+			 <input type="text" name="releaseYear" value="${film.releaseYear}" required> 
 				<br>
 				 <label
-				for="language">Language:</label> 
-				<select name="languageId">
+				for="languageId">Language:</label> 
+				<select name="languageId" value="${film.languageId}">
 				<option value=1>English</option>
 				<option value=2>Italian</option>
 				<option value=3>Japanese</option>
@@ -34,24 +35,24 @@
 				</select><br>
 				
 				<label for="rentDuration">Rent Duration:</label> 
-				<input type="text" name="rentDuration" required> 
+				<input type="text" name="rentDuration" value="${film.rentDuration}" required> 
 				<br>
 			<label for="rentalRate">Rental Rate:</label> 
-			<input type="text" name="rentalRate" required> 
+			<input type="text" name="rentalRate" value="${film.rentalRate}" required> 
 			<br> 
 			<label for="length">Length:</label>
-			<input type="text" name="length" required > 
+			<input type="text" name="length" value="${film.length}" required > 
 			<br> 
 			<label for="replacementCost">ReplacementCost:</label> 
 			<input type="text"
-				name="replacementCost" required> 
+				name="replacementCost" value="${film.replacementCost}" required> 
 				<br> 
 				<label
 				for="rating">Rating:</label> <input type="text" name="rating"
-				> 
+				value="${film.rating}"> 
 				<br>
 				<label for="specialFeatures">Special Features:</label> 
-				<select name="specialFeatures">
+				<select name="specialFeatures" value="${film.specialFeatures}">
 				<option >Trailers</option>
 				<option >Commentaries</option>
 				<option >Deleted Scenes</option>

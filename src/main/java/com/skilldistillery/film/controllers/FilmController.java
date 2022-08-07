@@ -32,6 +32,7 @@ public class FilmController {
 	public String delete() {
 		return "WEB-INF/delete.jsp";
 	}
+	
 	//filmDetails.do is a path we execute from our home.jsp, 
 	//we then pass a 'filmId' parameter input by user using the form "searchByFilmId" inside home.jsp
 	//we can duplicate this method for the keyword search user story 5 changing 
@@ -81,6 +82,34 @@ public class FilmController {
 		
 		return mv;
 	}
-
+	
+	//This path is hit from the filmResults.jsp edit button.
+	//It passes the filmId so we can find the film to edit in the DAO by using findFilmById(filmId)
+	//We use a GET request to populate the form with the previous values.
+	//We add the object which is the currentFilm to the model and view which will support that GET request with all the values
+	// of the currentFilm.
+	//then we set the model and view to hit the editFilm.jsp
+	@RequestMapping(path="editFilmForm.do", params="filmId", method=RequestMethod.GET)
+	public ModelAndView updateFilmForm(int filmId) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		Film currentFilm = filmDAO.findFilmById(filmId);
+		mv.addObject("film", currentFilm);
+		
+		mv.setViewName("WEB-INF/editFilm.jsp");
+		return mv;
+	}
+	
+	//When we click the Update Film button, this path will be taken.
+	//We use a POST request whenever we want to modify or in CRUD terms "Update"
+	//We pass in the actual Film object and pass the film object into the editFilm() method.
+	@RequestMapping(path="filmIsEdited.do", method=RequestMethod.POST)
+	public ModelAndView currentlyUpdatingFilm(Film film) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		filmDAO.editFilm(film);
+		System.out.println("***********INSIDE OF currentlyUpdatingFilm()*******");
+		System.out.println(film);
+		mv.setViewName("WEB-INF/filmResults.jsp");
+		return mv;
+	}
 	
 }
