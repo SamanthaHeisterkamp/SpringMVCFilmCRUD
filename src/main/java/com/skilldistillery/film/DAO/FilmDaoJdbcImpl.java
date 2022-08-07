@@ -410,7 +410,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 
 			stmt.setInt(1, filmId);
 
-//			int updateCount = stmt.executeUpdate();
+			int updateCount = stmt.executeUpdate();
 
 			conn.commit();
 			stmt.close();
