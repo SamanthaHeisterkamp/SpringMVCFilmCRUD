@@ -63,6 +63,11 @@
 							<input type="submit" value="Back">
 						</form>
 
+		<form action="deleteFilm.do" method="GET">
+			<label for="deleteFilm"> </label> <input type="text"
+				name="filmId" value="${film.filmId}" placeholder="Delete by ID"> <input
+				type="submit" value="Submit">
+		</form>
 			</c:when>
 
 			<c:otherwise>
@@ -75,12 +80,7 @@
 		</c:choose>
 	</div>
 <div>
-		<form action="deleteFilm.do" method="POST">
-			<label for="deleteFilm"> </label> <input type="text"
-				name="filmId" placeholder="Delete by ID"> <input
-				type="submit" value="Submit">
 
-		</form>
 	</div>
 </body>
 </html>
