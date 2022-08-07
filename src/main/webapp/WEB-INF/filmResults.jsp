@@ -68,6 +68,15 @@
 				name="filmId" value="${film.filmId}" placeholder="Delete by ID"> <input
 				type="submit" value="Submit">
 		</form>
+		
+		<form action="editFilm.do" method="GET">
+			<label for="editFilm"> </label> <input type="text"
+				name="filmId" value="${film.filmId}" placeholder="Update by ID"> <input
+				type="submit" value="Submit">
+		</form>
+	
+		
+		
 			</c:when>
 
 			<c:otherwise>

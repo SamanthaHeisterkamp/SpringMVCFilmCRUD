@@ -64,7 +64,7 @@ public class FilmController {
 	@RequestMapping(path= "thisFilmIsReallyCreated.do", method=RequestMethod.GET)
 	public ModelAndView filmHasBeenCreated() throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/filmResults.jsp");
+		mv.setViewName("WEB-INF/home.jsp");
 		return mv;
 	}
 
@@ -77,7 +77,7 @@ public class FilmController {
 		boolean deleted = filmDAO.deleteFilm(filmId);
 		mv.addObject("deleted", deleted);
 		mv.addObject("filmId", filmId);
-		mv.setViewName("WEB-INF/home.jsp");
+		mv.setViewName("WEB-INF/deletedFilm.jsp");
 		
 		return mv;
 	}

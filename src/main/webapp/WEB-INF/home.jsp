@@ -18,6 +18,15 @@
 
 		</form>
 	</div>
+	
+	<div>
+		<form action="filmDetails.do" method="get">
+			<label for="searchByKeyword"> </label> <input type="text"
+				name="keyword" placeholder="Search by Keyword"> <input
+				type="submit" value="Submit">
+
+		</form>
+	</div>
 
 	<div>
 		<form action="addFilm.do" method="post">
@@ -27,14 +36,14 @@
 
 	</div>
 
-	<div>
+	<!-- <div>
 		<form action="">
 			<button type="button">Remove Film</button>
 
 
 		</form>
 
-	</div>
+	</div> -->
 
 
 </body>
