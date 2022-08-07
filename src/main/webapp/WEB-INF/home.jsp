@@ -18,7 +18,7 @@
 
 		</form>
 	</div>
-	
+	<br>
 	<div>
 		<form action="filmDetails.do" method="get">
 			<label for="keyword"> </label> <input type="text"
@@ -27,7 +27,8 @@
 
 		</form>
 	</div>
-
+	<br>
+	<br>
 	<div>
 		<form action="addFilm.do" method="post">
 			

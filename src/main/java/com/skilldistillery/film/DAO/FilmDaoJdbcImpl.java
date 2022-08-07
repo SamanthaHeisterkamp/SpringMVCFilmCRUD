@@ -58,6 +58,8 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 			film.setActorList(findActorsByFilmId(filmId));
 			film.setLanguage(convertLanguageId(filmId));
 			film.setCategory(convertCategoryId(filmId));
+			
+			System.out.println(film.getLanguage().toString());
 
 		}
 
@@ -137,8 +139,8 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 		stmt.setInt(1, filmId);
 		ResultSet rs = stmt.executeQuery();
 
-		if (rs.next()) {
-			lang = rs.getString("l.name");
+		while (rs.next()) {
+			lang = rs.getString("name");
 		}
 		rs.close();
 		stmt.close();
@@ -357,7 +359,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 		} catch (SQLException e) {
 			System.err.println("Error trying to insert");
 			e.printStackTrace();
-		}
+		
 		if (conn != null) {
 			try {
 				conn.rollback();
@@ -365,6 +367,7 @@ public class FilmDaoJdbcImpl implements FilmDAO{
 				System.err.println("Error trying to rollback");
 				e2.printStackTrace();
 			}
+		}
 		}
 
 		return film;

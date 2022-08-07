@@ -64,14 +64,17 @@ public class FilmController {
 	
 	@RequestMapping(path= "createdFilm.do", method=RequestMethod.POST)
 	public ModelAndView createFilm(Film film, RedirectAttributes redir) throws SQLException{
-		Film newFilm = filmDAO.createFilm(film);
-//		boolean createdFilm = newFilm.getFilmId() > 0 ? true : false;
 		ModelAndView mv = new ModelAndView();
+		Film newFilm = filmDAO.createFilm(film);
+		Film filmWithCorrectInfo = filmDAO.findFilmById(newFilm.getFilmId());
+		String getThisDarnLanguage = filmWithCorrectInfo.getLanguage();
+		System.out.println("HERE >>>>>>>>>>>" + getThisDarnLanguage);
+		boolean createdFilm = newFilm.getFilmId() > 0 ? true : false;
 		System.out.println("**********************INSIDE OF CREATEFILM()****************");
 		System.out.println(newFilm);
-		boolean yesThisIsCreated = true;
-		redir.addFlashAttribute("createdFilm", yesThisIsCreated);
-		mv.addObject("film", newFilm);
+		redir.addFlashAttribute("film", newFilm);
+		redir.addFlashAttribute("createdFilm", createdFilm);
+		redir.addFlashAttribute("language", getThisDarnLanguage);
 		mv.setViewName("redirect:thisFilmIsReallyCreated.do");
 		return mv;
 	}
@@ -108,7 +111,6 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film currentFilm = filmDAO.findFilmById(filmId);
 		mv.addObject("film", currentFilm);
-		
 		mv.setViewName("WEB-INF/editFilm.jsp");
 		return mv;
 	}
@@ -120,8 +122,11 @@ public class FilmController {
 	public ModelAndView currentlyUpdatingFilm(Film film) throws SQLException {
 		ModelAndView mv = new ModelAndView();
 		filmDAO.editFilm(film);
+		Film filmWithCorrectInfo = filmDAO.findFilmById(film.getFilmId());
+		String getThisDarnLanguage = filmWithCorrectInfo.getLanguage();
 		System.out.println("***********INSIDE OF currentlyUpdatingFilm()*******");
 		System.out.println(film);
+		mv.addObject("language", getThisDarnLanguage);
 		mv.setViewName("WEB-INF/filmResults.jsp");
 		return mv;
 	}
