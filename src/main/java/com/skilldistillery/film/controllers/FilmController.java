@@ -67,10 +67,8 @@ public class FilmController {
 		mv.setViewName("WEB-INF/filmResults.jsp");
 		return mv;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> a9258f477b6264836b02f151fe1f8b3fa6eb1e2e
+
 	
 	@RequestMapping(path= "deleteFilm.do", params="filmId", method=RequestMethod.GET)
 	public ModelAndView deleteFilm(int filmId) throws SQLException {
@@ -83,9 +81,6 @@ public class FilmController {
 		
 		return mv;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> a9258f477b6264836b02f151fe1f8b3fa6eb1e2e
 	
 }
