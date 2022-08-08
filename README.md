@@ -22,3 +22,6 @@ For our week 8 project we were tasked with creating a full-stack Spring MVC web 
 
 ## Lessons Learned
 
+Communication was key during this project build. This prevented merge conflict and when merge conflicts did arise, we were able to walk each team mate through the process of fixing our merges. Open communication about ideas, schedules, pair programming, and pushing kept our project build clean. 
+Naming our methods and .do's turned out to be really important. We learned early on that using very specific names would help us know where we were in the terminal during troubleshooting. 
+We learned how to properly implement Spring MVC into our Dynamic Web Application.    
