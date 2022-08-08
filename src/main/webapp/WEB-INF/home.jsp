@@ -31,7 +31,7 @@
 
 		<form action="filmDetails.do" method="get">
 			<div class="form-group">
-				<label for="searchByFilmId">Id Search</label> <input type="text"
+				<label for="searchByFilmId"></label> <input type="text"
 					class="form-control" name="filmId" placeholder="Enter an Id">
 				<input class="btn btn-secondary" type="submit" value="Submit">
 			</div>
@@ -49,7 +49,7 @@
 			
         <form action="filmDetails.do" method="get">
 			<div class="form-group">
-				<label for="searchByKeyword">Keyword Search</label> <input type="text"
+				<label for="searchByKeyword"></label> <input type="text"
 					class="form-control" name="keyword" placeholder="Enter a Keyword">
 				<input class="btn btn-secondary" type="submit" value="Submit">
 	</div>
@@ -57,7 +57,7 @@
 		</div>
 	<br>
 	<br>
-	<div>
+	<div id="createFilmButton">
 		<form action="addFilm.do" method="post">
 <input class="btn btn-secondary" type="submit" value="Create Film">
 		</form>
