@@ -23,14 +23,16 @@
 		<c:when test="${deleted}">
 			<h1>Film Deleted ${filmId}</h1>
 			<form action="home.do">
-				<input type="submit" value="Home">
+			<input class="btn btn-secondary" type="submit" value="Home">
+			
 			</form>
 		</c:when>
 
 		<c:otherwise>
 			<h3>Unable to Delete Film</h3>
 			<form action="home.do">
-				<input type="submit" value="Home">
+			<input class="btn btn-secondary" type="submit" value="Home">
+			
 			</form>
 		</c:otherwise>
 

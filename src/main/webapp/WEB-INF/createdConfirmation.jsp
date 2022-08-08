@@ -34,23 +34,27 @@
 						<li>Special Features: ${film.specialFeatures}</li>
 		<form action="deleteFilm.do" method="GET">
 			<label for="deleteFilm"> </label> <input type="text"
-				name="filmId" value="${film.filmId}" placeholder="Delete by ID"> <input
-				type="submit" value="Delete Film">
+				name="filmId" value="${film.filmId}" placeholder="Delete by ID"> 
+				<input class="btn btn-secondary" type="submit" value="Delete Film">
+				
 		</form><br>
 		
 		<form action="editFilmForm.do" method="GET">
 			<label for="editFilm"> </label> <input type="text"
-				name="filmId" value="${film.filmId}" placeholder="Update by ID"> <input
-				type="submit" value="Update Film">
+				name="filmId" value="${film.filmId}" placeholder="Update by ID"> 
+				<input class="btn btn-secondary" type="submit" value="Update Film">
+				
 		</form>
 			<form action="home.do">
-				<input type="submit" value="Home">
+			<input class="btn btn-secondary" type="submit" value="Home">
+			
 			</form>
 		</c:when>
 		<c:otherwise>
 			<h3>Unable to Create Film Loser</h3>
 			<form action="home.do">
-				<input type="submit" value="Home">
+			<input class="btn btn-secondary" type="submit" value="Home">
+			
 			</form>
 		</c:otherwise>
 

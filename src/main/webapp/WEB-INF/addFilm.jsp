@@ -73,8 +73,8 @@
 				</select>
 				<br>
 
+<input class="btn btn-secondary" type="submit" value="Create Film">
 
-			<input type="submit" value="Create Film">
 
 
 		</form>

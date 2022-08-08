@@ -75,8 +75,8 @@
 				</select>
 				<br>
 
+<input class="btn btn-secondary" type="submit" value="Home">
 
-			<input type="submit" value="Update Film">
 
 
 		</form>

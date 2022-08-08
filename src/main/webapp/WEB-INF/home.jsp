@@ -59,8 +59,7 @@
 	<br>
 	<div>
 		<form action="addFilm.do" method="post">
-
-			<input type="submit" value="Create Film">
+<input class="btn btn-secondary" type="submit" value="Create Film">
 		</form>
 
 	</div>

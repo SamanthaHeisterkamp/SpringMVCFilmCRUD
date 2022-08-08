@@ -74,17 +74,21 @@
 						
 						<form action="deleteFilm.do" method="GET">
 							<label for="deleteFilm"> </label> <input type="text"
-									name="filmId" value="${film.filmId}" placeholder="Delete by ID"> <input
-									type="submit" value="Submit">
+									name="filmId" value="${film.filmId}" placeholder="Delete by ID"> 
+								<input class="btn btn-secondary" type="submit" value="Submit">
+								
 						</form> <br>
 		
 						<form action="editFilmForm.do" method="GET">
 							<label for="editFilm"> </label> <input type="text"
-									name="filmId" value="${film.filmId}" placeholder="Update by ID"> <input
-									type="submit" value="Submit">
+									name="filmId" value="${film.filmId}" placeholder="Update by ID">
+									<input class="btn btn-secondary" type="submit" value="Submit">
+									
 						</form><br>
 						
 						<form action="home.do">
+						<input class="btn btn-secondary" type="submit" value="Back">
+						
 							<input type="submit" value="Back">
 						</form>
 
@@ -97,7 +101,8 @@
 			<c:otherwise>
 				<p>Film NOT Found!!!!!!</p>
 				<form action="home.do">
-					<input type="submit" value="Back">
+				<input class="btn btn-secondary" type="submit" value="Back">
+				
 				</form>
 
 			</c:otherwise>
