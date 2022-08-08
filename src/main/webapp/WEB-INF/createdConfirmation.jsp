@@ -39,13 +39,13 @@
 				<input type="submit" value="Home">
 			</form>
 		</c:when>
-
 		<c:otherwise>
 			<h3>Unable to Create Film Loser</h3>
 			<form action="home.do">
 				<input type="submit" value="Home">
 			</form>
 		</c:otherwise>
+
 
 	</c:choose>
 

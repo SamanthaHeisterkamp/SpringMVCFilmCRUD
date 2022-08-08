@@ -20,7 +20,7 @@
 			<input name="description" maxlength=250 value="${film.description}"></input>
 			<br>
 			 <label for="releaseYear">Release Year:</label> 
-			 <input type="text" name="releaseYear" value="${film.releaseYear}" required> 
+			 <input type="number" onkeypress="return /[0-9]/i.test(event.key)" name="releaseYear" value="${film.releaseYear}" required> 
 				<br>
 				 <label
 				for="languageId">Language:</label> 
@@ -35,21 +35,27 @@
 				</select><br>
 				
 				<label for="rentDuration">Rent Duration:</label> 
-				<input type="text" name="rentDuration" value="${film.rentDuration}" required> 
+				<input type="number" onkeypress="return /[0-9]/i.test(event.key)" name="rentDuration" value="${film.rentDuration}" required> 
 				<br>
 			<label for="rentalRate">Rental Rate:</label> 
-			<input type="text" name="rentalRate" value="${film.rentalRate}" required> 
+			<input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="rentalRate"  value="${film.rentalRate}" required> 
 			<br> 
 			<label for="length">Length:</label>
-			<input type="text" name="length" value="${film.length}" required > 
+			<input type="text" onkeypress="return /[0-9]/i.test(event.key)" name="length" value="${film.length}" required > 
 			<br> 
 			<label for="replacementCost">ReplacementCost:</label> 
-			<input type="text"
-				name="replacementCost" value="${film.replacementCost}" required> 
+			<input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="replacementCost" value="${film.replacementCost}" required> 
 				<br> 
-				<label
-				for="rating">Rating:</label> <input type="text" name="rating"
-				value="${film.rating}"> 
+				<label for="rating">Rating:</label>
+				 <select  name="rating" value="${film.rating}"> 
+				<option >G</option>
+				<option >PG</option>
+				<option >PG13</option>
+				<option >R</option>
+				<option >NC17</option>
+				
+				</select>
+				
 				<br>
 				<label for="specialFeatures">Special Features:</label> 
 				<select name="specialFeatures" value="${film.specialFeatures}">

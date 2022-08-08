@@ -14,14 +14,14 @@
 		<form action="createdFilm.do" method="post">
 			<label for="title">Title:</label> 
 			<input type="text" name="title"required="true"> 
-				<br>
-				 <label for="description">Description:</label>
+			<br>
+			<label for="description">Description:</label>
 			<textarea name="description"></textarea>
 			<br>
-			 <label for="releaseYear">Release Year:</label> 
-			 <input type="text" name="releaseYear" required> 
-				<br>
-				 <label
+			<label for="releaseYear">Release Year:</label> 
+			<input type="number" onkeypress="return /[0-9]/i.test(event.key)" name="releaseYear" required> <!--can only enter numbers  -->
+			<br>
+			<label
 				for="language">Language:</label> 
 				<select name="languageId">
 				<option value=1>English</option>
@@ -33,24 +33,29 @@
 				
 				</select><br>
 				
-				<label for="rentDuration">Rent Duration:</label> 
-				<input type="text" name="rentDuration" required> 
-				<br>
+		    <label for="rentDuration">Rent Duration:</label> 
+		    <input type="text" onkeypress="return /[0-9]/i.test(event.key)" name="rentDuration" required> <!-- can only enter numbers -->
+			<br>
 			<label for="rentalRate">Rental Rate:</label> 
-			<input type="text" name="rentalRate" required> 
+			<input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="rentalRate" required> <!--can only enter numbers and decimals  -->
 			<br> 
 			<label for="length">Length:</label>
-			<input type="text" name="length" required > 
+			<input type="text" onkeypress="return /[0-9]/i.test(event.key)" name="length" required > <!--can only enter numbers  -->
 			<br> 
 			<label for="replacementCost">ReplacementCost:</label> 
-			<input type="text"
-				name="replacementCost" required> 
-				<br> 
-				<label
-				for="rating">Rating:</label> <input type="text" name="rating"
-				> 
-				<br>
-				<label for="specialFeatures">Special Features:</label> 
+			<input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name="replacementCost" required> 
+			<br> 
+			<label for="rating">Rating:</label> <!--add drop down for rating  -->
+			<select name="rating" >
+				<option >G</option>
+				<option >PG</option>
+				<option >PG13</option>
+				<option >R</option>
+				<option >NC17</option>
+				
+				</select>
+			<br>
+			<label for="specialFeatures">Special Features:</label> 
 				<select name="specialFeatures">
 				<option >Trailers</option>
 				<option >Commentaries</option>
