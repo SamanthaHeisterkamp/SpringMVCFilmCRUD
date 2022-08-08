@@ -1,1 +1,26 @@
 @charset "UTF-8";
+
+body {
+	background-color: SlateGray;
+	
+}
+#missionstatement {
+	text-align: center;
+	font-family: "copperplate";
+	font-size:35px;
+}
+
+h1 {
+	color: black;
+	text-shadow: 0 0 5px #008080, 0 0 5px #FFFFFF;
+	text-align: center;
+}
+
+.form-control {
+	top: 6px;
+	left: 8px;
+	width: 300px;
+}
+.form-group {
+	align-self: center;
+}

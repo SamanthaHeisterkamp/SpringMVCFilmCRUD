@@ -4,7 +4,7 @@
 
 <html>
 
-<div class="text-bg-dark p-3">Dark with contrasting color</div>
+<div id=missionstatement class="text-bg-dark p-3">People | Person's | Video | People</div>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-	<h1 style="color: teal;">Film Query APP</h1>
+	<h1>The Micheal Scott Pa... Video Company</h1>
 	<div>
 		<!-- <form action="filmDetails.do" method="get">
 			<label for="searchByFilmId"> </label> <input type="text"
@@ -40,14 +40,21 @@
 	</div>
 	<br>
 	<div>
-		<form action="filmDetails.do" method="get">
+		<!-- <form action="filmDetails.do" method="get">
 			<label for="keyword"> </label> <input type="text" name="keyword"
 				placeholder="Search by Keyword"> <input
-				class="btn btn-secondary" type="submit" value="Submit">
+				class="btn btn-secondary" type="submit" value="Submit"> -->
 			<!--  	<input type="submit" value="Submit">-->
-
-		</form>
+			
+			
+        <form action="filmDetails.do" method="get">
+			<div class="form-group">
+				<label for="searchByKeyword">Keyword Search</label> <input type="text"
+					class="form-control" name="keyword" placeholder="Enter a Keyword">
+				<input class="btn btn-secondary" type="submit" value="Submit">
 	</div>
+		</form>
+		</div>
 	<br>
 	<br>
 	<div>
@@ -57,6 +64,7 @@
 		</form>
 
 	</div>
+	
 
 	<!-- <div>
 		<form action="">
